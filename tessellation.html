@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tessellation</title>
+        <link rel="stylesheet" type="text/css" href="twist_tess.css"> 
+    </head>
+
+    <section>
+        <li><b>Dayo Asaolu </b></li>
+        <li><b>Fume Uvwie  </b></li>
+    </section>
+    
+
+    <body>
+        
+        <canvas width = "700" height = "500" id = "my_Canvas" style="border: 2px solid rgb(1, 126, 243)"></canvas>
+        <script type="text/javascript" src="twist_tess.js"></script>
+        
+        <div class="a">
+        
+            <div class="b" id="shape"><h4>Select Your Polygon</h4>
+                <input type="radio" id="triangle" name="shape-radio" checked="checked" onclick="subdivideShape()"><label for="triangle">Triangle</label><br>
+                <input type="radio" id="square" name="shape-radio" onclick="subdivideShape()"><label for="square">Square</label><br>
+                <input type="radio" id="pentagon" name="shape-radio" onclick="subdivideShape()"><label for="pentagon">Pentagon</label><br>
+                <input type="radio" id="hexagon" name="shape-radio" onclick="subdivideShape()"><label for="hexagon">Hexagon</label><br>
+                <input type="radio" id="octagon" name="shape-radio" onclick="subdivideShape()"><label for="octagon">Octagon</label>
+
+            </div>
+
+            <div class="c" id="Tesselation" style="width: 50%; left: 345px; height: 180px; text-align: center;"><h4> Select Your level of Tesselation</h4>
+                <input type="radio" id="Tesselation-radio0" name="Tesselation-radio" checked="checked" value="0" onclick="subdivideShape()" ><label for="shape-radio4">0 Subdivisions</label><br>
+                <input type="radio" id="Tesselation-radio1" name="Tesselation-radio" value="1" onclick="subdivideShape()"><label for="Tesselation-radio1">1 Subdivisions</label><br>
+                <input type="radio" id="Tesselation-radio2" name="Tesselation-radio" value="2" onclick="subdivideShape()"><label for="Tesselation-radio2">2 Subdivisions</label><br>
+                <input type="radio" id="Tesselation-radio3" name="Tesselation-radio" value="3" onclick="subdivideShape()"><label for="Tesselation-radio3">3 Subdivisions</label><br>
+                <input type="radio" id="Tesselation-radio4" name="Tesselation-radio" value="4" onclick="subdivideShape()"><label for="Tesselation-radio4">4 Subdivisions</label><br>
+                <input type="radio" id="Tesselation-radio5" name="Tesselation-radio" value="5" onclick="subdivideShape()"><label for="Tesselation-radio5">5 Subdivisions</label><br>
+            </div>
+
+            
+            <div class="d" id="view" style="width: 130px; height: 180px; left: 205px;"><h4>Select View</h4>
+                <input type="radio" id="Wire Frame" name="display" checked="checked" onclick="subdivideShape()"> <label for="Wire Frame">Wire Frame</label><br>
+                <input type="radio" id="Solid" name="display" onclick="subdivideShape()"> <label for="Solid">Solid</label>
+            </div>
+            
+            <div class="e" class="slidecontainer" style="text-align: center;"  ><h4>Twist Use keyboard arrow for Smoth twist</h4>
+                <input type="range" min="0" max="1800" value="0" class="slider" id="myRange" onchange="subdivideShape()"><label id="wee"> <span id="demo"></span></label>
+            </div>
+                
+                <script>
+                    var slider = document.getElementById("myRange");
+                    var output = document.getElementById("demo");
+                    output.innerHTML = slider.value;
+                    
+                    slider.oninput = function() {
+                        output.innerHTML = this.value*1;
+                        subdivideShape();
+                    }
+                </script>
+
+            
+            <div class="f" id="view" style="text-align: center;"><h4>Shading</h4>
+                <input type="radio" id="Flat" name="shading" checked="checked" onclick="subdivideShape()"> <label for="Flat">Flat Shaing</label>
+                <input type="radio" id="Smoth" name="shading" onclick="subdivideShape()"> <label for="Solid">Smoth Shading</label>
+            </div>
+            
+        </div>
+
+      </body>
+      
+
+</html>
